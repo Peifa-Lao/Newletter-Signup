@@ -41,7 +41,7 @@ app.post("/",function(req,res){
       res.sendFile(__dirname+"/success.html");
     }
     else{
-      res.sendFile(__dirname+"/faulure.html");
+      res.sendFile(__dirname+"/failure.html");
     }
 
     response.on("data",function(data){
