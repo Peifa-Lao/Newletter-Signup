@@ -33,7 +33,7 @@ app.post("/",function(req,res){
 
   const options = {
     method:"POST",
-    auth:"Peifa:d89c0233b9715d82ae793428ef5bbcee-us11"
+    auth:""
   }
   const request = https.request(url,options,function(response){
 
