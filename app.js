@@ -43,9 +43,13 @@ app.post("/",function(req,res){
     
     //see what response we get after sending request
     if(response.statusCode == 200){
+      
+      //res to user with success.html
       res.sendFile(__dirname+"/success.html");
     }
     else{
+      
+      //res to user with failure.html
       res.sendFile(__dirname+"/failure.html");
     }
 
