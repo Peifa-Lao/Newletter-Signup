@@ -30,13 +30,18 @@ app.post("/",function(req,res){
   };
   const jsonData = JSON.stringify(data);
   const url = "https://us11.api.mailchimp.com/3.0/lists/399b4ae5a5";
-
+  
+  //javascript object
+  //in http options allow to add method and auth
   const options = {
     method:"POST",
     auth:""
   }
+  
+  //use node.js https model to send request 
   const request = https.request(url,options,function(response){
-
+    
+    //see what response we get after sending request
     if(response.statusCode == 200){
       res.sendFile(__dirname+"/success.html");
     }
@@ -48,6 +53,8 @@ app.post("/",function(req,res){
       console.log(JSON.parse(data));
     })
   })
+  
+  //pass the json data to mailchimp server
   request.write(jsonData);
   request.end();
 });
